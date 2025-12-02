@@ -8,6 +8,10 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 5f; //speed of the player
     public float mouseSens = 100f; //mouse sensitivity 
 
+    public float jumpForce = 5f; //jump amount
+    public LayerMask mapMask; //ground layer
+    public float groundCheckDistance = 1.1f; // checks if the player is on the ground
+
     private Rigidbody rb;
    
 
@@ -21,12 +25,14 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         MovePlayer(); //Movement for player
+
       
     }
 
     private void Update()
     {
-        RotatePlayer(); // Camera rotation with mouse
+        RotatePlayer(); // camera rotation with mouse
+        HandleJump();
     }
     void MovePlayer()
     {
@@ -44,4 +50,19 @@ public class PlayerMovement : MonoBehaviour
 
         transform.Rotate(Vector3.up * mouseX);
     }
+    void HandleJump()
+    {
+        if(Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+        {
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        }    
+    }
+   
+    bool IsGrounded()
+    {
+        return Physics.Raycast(transform.position, Vector3.down, groundCheckDistance, mapMask);
+
+    }    
+        
 }
+

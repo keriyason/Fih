@@ -5,45 +5,45 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [Header("Health Settings")]
-    public Slider healthBar;
-    public int maxHealth = 100;
-    private int currentHealth;
+    
+    public Slider healthBar; // UI Slider
+    public int maxHealth = 100; //health
+    private int currentHealth; //tracks players health
 
-    [Header("Knockback Settings")]
-    [SerializeField] public float knockbackForce = 10f;
+   
+    [SerializeField] public float knockbackForce = 10f; //knockback
     private Rigidbody rb;
 
-    [Header("UI")]
+   
     public GameObject gameOverScreen;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>(); // Get player Rigidbody
 
-        healthBar.maxValue = maxHealth;
-        healthBar.value = maxHealth;
-        currentHealth = maxHealth;
+        healthBar.maxValue = maxHealth; //max health
+        healthBar.value = maxHealth; 
+        currentHealth = maxHealth; //track how much health the player has
 
-        gameOverScreen.SetActive(false);
+        gameOverScreen.SetActive(false); // You died screen
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("enemy"))
         {
-            // Apply damage
-            TakeDamage(1); // or pass in enemy damage value
-
-            // Apply knockback
-            ApplyKnockback(other.transform);
+            if (other.GetComponent<Enemy>() == null) return;
+            Debug.Log($"{gameObject.name} collided with {other.gameObject.name}");
+            TakeDamage(1); //if collision with enemy player takes 1 dmg
+            ApplyKnockback(other.transform); //applies knockback on collision
         }
+        
     }
 
     private void ApplyKnockback(Transform enemy)
     {
-        // Push player away from enemy
-        Vector3 direction = (transform.position - enemy.position).normalized;
+        
+        Vector3 direction = (transform.position - enemy.position).normalized; //knockback
         rb.AddForce(direction * knockbackForce, ForceMode.Impulse);
     }
 
@@ -62,7 +62,7 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= value;
         healthBar.value = currentHealth;
 
-        if (currentHealth <= 0)
+        if (currentHealth <= 0) //if the players health reaches 0 players dies
         {
             Die();
         }
@@ -71,6 +71,6 @@ public class PlayerHealth : MonoBehaviour
     public void Die()
     {
         Time.timeScale = 0;
-        gameOverScreen.SetActive(true);
+        gameOverScreen.SetActive(true); //on death triggers try again screen
     }
 }

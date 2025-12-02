@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public int damage = 1;
-    public float swingAngle = 90f;
-    public float swingSpeed = 10f;
+    public int damage = 1; // dmg of weapin
+    public float swingAngle = 90f; // how far the swing will go
+    public float swingSpeed = 10f; // how fast the swing is
 
     public float stabDistance = 5f;   // how far forward the stab goes
     public float stabSpeed = 15f;     // speed of stab
@@ -16,7 +16,7 @@ public class Weapon : MonoBehaviour
     private bool isSwinging = false;
     private bool isStabbing = false;
 
-    private Quaternion startRotation;
+    private Quaternion startRotation; //rotation of swing
     private Quaternion targetRotation;
     private Vector3 startPosition;
 
@@ -28,14 +28,14 @@ public class Weapon : MonoBehaviour
 
     private void Update()
     {
-        // Left click = swing
-        if (Input.GetMouseButtonDown(0) && !isSwinging && !isStabbing)
+       
+        if (Input.GetMouseButtonDown(0) && !isSwinging && !isStabbing)  // left click = swing
         {
             StartCoroutine(Swing());
         }
 
-        // Right click = stab
-        if (Input.GetMouseButtonDown(1) && !isSwinging && !isStabbing)
+        
+        if (Input.GetMouseButtonDown(1) && !isSwinging && !isStabbing) // right click = stab
         {
             StartCoroutine(Stab());
         }
@@ -76,7 +76,6 @@ public class Weapon : MonoBehaviour
             yield return null;
         }
 
-        // Return to original position
         t = 0f;
         while (t < 1f)
         {
