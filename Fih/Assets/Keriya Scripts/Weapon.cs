@@ -16,63 +16,55 @@ public class Weapon : MonoBehaviour
     private bool isSwinging = false;
     private bool isStabbing = false;
 
-    private Quaternion startRotation; //rotation of swing
-    private Quaternion targetRotation;
-    private Vector3 startPosition;
-
-    private void Start()
-    {
-        startRotation = transform.localRotation;
-        startPosition = transform.localPosition;
-    }
+    [SerializeField] private Transform player; // reference to player transform
 
     private void Update()
     {
-       
-        if (Input.GetMouseButtonDown(0) && !isSwinging && !isStabbing)  // left click = swing
-        {
+        if (Input.GetMouseButtonDown(0) && !isSwinging && !isStabbing)
             StartCoroutine(Swing());
-        }
 
-        
-        if (Input.GetMouseButtonDown(1) && !isSwinging && !isStabbing) // right click = stab
-        {
+        if (Input.GetMouseButtonDown(1) && !isSwinging && !isStabbing)
             StartCoroutine(Stab());
-        }
     }
 
-    private System.Collections.IEnumerator Swing()
+    private IEnumerator Swing()
     {
         isSwinging = true;
 
+        // Base rotation aligned with player facing
+        Quaternion startRot = player.rotation;
         float angle = swingLeft ? swingAngle : -swingAngle;
-        targetRotation = Quaternion.Euler(0f, angle, 0f) * startRotation;
+
+        // Target rotation is player facing rotated around Y axis
+        Quaternion targetRot = startRot * Quaternion.AngleAxis(angle, Vector3.up);
 
         float t = 0f;
         while (t < 1f)
         {
             t += Time.deltaTime * swingSpeed;
-            transform.localRotation = Quaternion.Slerp(startRotation, targetRotation, t);
+            transform.rotation = Quaternion.Slerp(startRot, targetRot, t);
             yield return null;
         }
 
-        transform.localRotation = startRotation;
+        // Reset back to player facing
+     
 
         swingLeft = !swingLeft;
         isSwinging = false;
     }
 
-    private System.Collections.IEnumerator Stab()
+    private IEnumerator Stab()
     {
         isStabbing = true;
 
-        Vector3 targetPosition = startPosition + transform.forward * stabDistance;
+        Vector3 startPos = transform.position;
+        Vector3 targetPos = startPos + player.forward * stabDistance;
 
         float t = 0f;
         while (t < 1f)
         {
             t += Time.deltaTime * stabSpeed;
-            transform.localPosition = Vector3.Lerp(startPosition, targetPosition, t);
+            transform.position = Vector3.Lerp(startPos, targetPos, t);
             yield return null;
         }
 
@@ -80,11 +72,11 @@ public class Weapon : MonoBehaviour
         while (t < 1f)
         {
             t += Time.deltaTime * stabSpeed;
-            transform.localPosition = Vector3.Lerp(targetPosition, startPosition, t);
+            transform.position = Vector3.Lerp(targetPos, startPos, t);
             yield return null;
         }
 
-        transform.localPosition = startPosition;
+        transform.position = startPos;
         isStabbing = false;
     }
 
@@ -94,12 +86,11 @@ public class Weapon : MonoBehaviour
         {
             Enemy enemy = other.GetComponent<Enemy>();
             if (enemy != null)
-            {
                 enemy.TakeDamage(damage);
-            }
         }
     }
 }
+
 
 
 
