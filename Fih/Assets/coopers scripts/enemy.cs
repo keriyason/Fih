@@ -11,6 +11,9 @@ public class Enemy : parent
     public NavMeshAgent agent;
     public int health = 2;
 
+    [SerializeField] public int damage = 1;
+
+
     public static event Action<Enemy> OnEnemyKilled;
 
 

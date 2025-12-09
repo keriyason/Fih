@@ -34,7 +34,7 @@ public class PlayerHealth : MonoBehaviour
         if (enemy == null) return; // ignore anything that's not an Enemy
 
         Debug.Log($"{gameObject.name} collided with {enemy.gameObject.name}");
-        TakeDamage(1);
+        TakeDamage(enemy.damage);
         ApplyKnockback(enemy.transform);
     }
 
