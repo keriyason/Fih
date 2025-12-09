@@ -30,17 +30,15 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("enemy"))
-        {
-            if (other.GetComponent<Enemy>() == null) return;
-            Debug.Log($"{gameObject.name} collided with {other.gameObject.name}");
-            TakeDamage(1); //if collision with enemy player takes 1 dmg
-            ApplyKnockback(other.transform); //applies knockback on collision
-        }
-        
+        Enemy enemy = other.GetComponent<Enemy>();
+        if (enemy == null) return; // ignore anything that's not an Enemy
+
+        Debug.Log($"{gameObject.name} collided with {enemy.gameObject.name}");
+        TakeDamage(1);
+        ApplyKnockback(enemy.transform);
     }
 
-    private void ApplyKnockback(Transform enemy)
+private void ApplyKnockback(Transform enemy)
     {
         
         Vector3 direction = (transform.position - enemy.position).normalized; //knockback

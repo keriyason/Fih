@@ -11,10 +11,13 @@ public class Weapon : MonoBehaviour
 
     public float stabDistance = 5f;   // how far forward the stab goes
     public float stabSpeed = 15f;     // speed of stab
+    public GameObject slashVFX; //for flash VFX
 
     private bool swingLeft = true;
     private bool isSwinging = false;
     private bool isStabbing = false;
+
+   
 
     [SerializeField] private Transform player; // reference to player transform
 
@@ -45,9 +48,14 @@ public class Weapon : MonoBehaviour
             transform.rotation = Quaternion.Slerp(startRot, targetRot, t);
             yield return null;
         }
+        if (slashVFX != null)
 
-        // Reset back to player facing
-     
+        {
+            Quaternion rotationFix = transform.rotation * Quaternion.Euler(90f, 0f, 0f);
+            Instantiate(slashVFX, transform.position, rotationFix);
+
+        }
+
 
         swingLeft = !swingLeft;
         isSwinging = false;
@@ -86,7 +94,9 @@ public class Weapon : MonoBehaviour
         {
             Enemy enemy = other.GetComponent<Enemy>();
             if (enemy != null)
+            {
                 enemy.TakeDamage(damage);
+            }
         }
     }
 }
