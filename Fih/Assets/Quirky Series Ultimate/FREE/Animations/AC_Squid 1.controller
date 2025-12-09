@@ -362,7 +362,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -5624545281902316504, guid: f2c84b0c526b37c45806428bb221b269, type: 3}
+  m_Motion: {fileID: 6720303635017113406, guid: f2c84b0c526b37c45806428bb221b269, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -634,7 +634,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AC_Squid
+  m_Name: AC_Squid 1
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:
