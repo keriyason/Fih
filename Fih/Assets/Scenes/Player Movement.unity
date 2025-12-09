@@ -8255,6 +8255,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chest_01_2
       objectReference: {fileID: 0}
+    - target: {fileID: 5089506687025941184, guid: 7b175062757215f49be54686dc54b6a7, type: 3}
+      propertyPath: m_LODs.Array.data[0].screenRelativeHeight
+      value: 0.055850852
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089506687025941184, guid: 7b175062757215f49be54686dc54b6a7, type: 3}
+      propertyPath: m_LODs.Array.data[1].screenRelativeHeight
+      value: 0.037310053
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8268,6 +8276,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 57225880285996609, guid: 3e71c26e4aebb7141879aa4d4ba17c76, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8169407682679951765, guid: 3e71c26e4aebb7141879aa4d4ba17c76, type: 3}
       propertyPath: m_LocalPosition.x
       value: 47.238102
@@ -8401,6 +8413,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2351555138952716719, guid: 9834d4c2631ab484b86584d82c4c0c58, type: 3}
+      propertyPath: m_LODs.Array.data[0].screenRelativeHeight
+      value: 0.08209165
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351555138952716719, guid: 9834d4c2631ab484b86584d82c4c0c58, type: 3}
+      propertyPath: m_LODs.Array.data[1].screenRelativeHeight
+      value: 0.037310053
+      objectReference: {fileID: 0}
     - target: {fileID: 7419813812687853278, guid: 9834d4c2631ab484b86584d82c4c0c58, type: 3}
       propertyPath: m_LocalPosition.x
       value: 44.82
