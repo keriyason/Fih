@@ -2566,7 +2566,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 2076316158}
   maxHealth: 3
-  knockbackForce: 10
+  knockbackForce: 20
   gameOverScreen: {fileID: 777171817}
 --- !u!136 &531341809
 CapsuleCollider:
@@ -8581,6 +8581,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Taipan
       objectReference: {fileID: 0}
+    - target: {fileID: 7790860938468804881, guid: 1ff280ee1d7870746b9f189f9b2c5ccc, type: 3}
+      propertyPath: m_TagString
+      value: enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8705,6 +8709,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gecko
       objectReference: {fileID: 0}
+    - target: {fileID: 2311648599346056928, guid: 65a56611846c67345b107258f80ad3f6, type: 3}
+      propertyPath: m_TagString
+      value: enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 3680717905863252995, guid: 65a56611846c67345b107258f80ad3f6, type: 3}
       propertyPath: Player
       value: 
@@ -8777,9 +8785,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 306416353591056050, guid: 50988407503b4b14080dd5f98abb8fe4, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 817994645741553143, guid: 50988407503b4b14080dd5f98abb8fe4, type: 3}
       propertyPath: m_Name
       value: Sparrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 817994645741553143, guid: 50988407503b4b14080dd5f98abb8fe4, type: 3}
+      propertyPath: m_TagString
+      value: enemy
       objectReference: {fileID: 0}
     - target: {fileID: 3439243587241401662, guid: 50988407503b4b14080dd5f98abb8fe4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9033,6 +9049,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Herring
       objectReference: {fileID: 0}
+    - target: {fileID: 5938113977963569996, guid: 745dca23c6a55f448adf279991c7e0f8, type: 3}
+      propertyPath: m_TagString
+      value: enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9086,6 +9106,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1894519732766505676, guid: 31d2e85453a6f57499d324d31ae4663e, type: 3}
+      propertyPath: m_Speed
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1948916999904252979, guid: 31d2e85453a6f57499d324d31ae4663e, type: 3}
       propertyPath: m_Name
       value: Squid
@@ -9098,6 +9122,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 4379342799181084431, guid: 31d2e85453a6f57499d324d31ae4663e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b114214d67cd7e46862a9147d3c9fcb, type: 2}
     - target: {fileID: 9206007747469679644, guid: 31d2e85453a6f57499d324d31ae4663e, type: 3}
       propertyPath: agent
       value: 
@@ -9106,6 +9134,10 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 531341805}
+    - target: {fileID: 9206007747469679644, guid: 31d2e85453a6f57499d324d31ae4663e, type: 3}
+      propertyPath: health
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9359,12 +9391,12 @@ BoxCollider:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1453958908}
   - {fileID: 371157210}
   - {fileID: 811500329}
   - {fileID: 531341805}
   - {fileID: 1229957016}
   - {fileID: 1905101797}
-  - {fileID: 1453958908}
   - {fileID: 1031290086}
   - {fileID: 585433192}
   - {fileID: 538945267}
