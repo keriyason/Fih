@@ -68,7 +68,7 @@ private void ApplyKnockback(Transform enemy)
 
     public void Die()
     {
-        Time.timeScale = 0;
+      
         gameOverScreen.SetActive(true); //on death triggers try again screen
     }
 }
