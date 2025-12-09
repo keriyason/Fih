@@ -9,8 +9,8 @@ public class KillZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Reset Level");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+      
+            SceneManager.LoadScene("Lose Screen");
         }
     }
 }

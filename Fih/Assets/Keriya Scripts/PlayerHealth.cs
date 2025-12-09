@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
@@ -15,7 +17,7 @@ public class PlayerHealth : MonoBehaviour
     private Rigidbody rb;
 
    
-    public GameObject gameOverScreen;
+   
 
     private void Start()
     {
@@ -25,7 +27,7 @@ public class PlayerHealth : MonoBehaviour
         healthBar.value = maxHealth; 
         currentHealth = maxHealth; //track how much health the player has
 
-        gameOverScreen.SetActive(false); // You died screen
+       
     }
 
     private void OnTriggerEnter(Collider other)
@@ -68,7 +70,7 @@ private void ApplyKnockback(Transform enemy)
 
     public void Die()
     {
-      
-        gameOverScreen.SetActive(true); //on death triggers try again screen
+
+        SceneManager.LoadScene("Lose Screen"); //on death triggers try again screen
     }
 }
