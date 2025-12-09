@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -9,6 +10,9 @@ public class Enemy : parent
 
     public NavMeshAgent agent;
     public int health = 2;
+
+    public static event Action<Enemy> OnEnemyKilled;
+
 
     private void Start()
     {
@@ -41,6 +45,7 @@ public class Enemy : parent
 
     private void Die()
     {
+        OnEnemyKilled?.Invoke(this); //calls to the ui 
         Destroy(gameObject);
     }
 }
