@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Player Movement.unity
     guid: 330902a2b470c944ba5f17d8be80a9f2
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
+    guid: 301262a3802898f4788e442e07c6cf8c
   m_configObjects: {}
