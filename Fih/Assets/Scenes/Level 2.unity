@@ -4498,7 +4498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  mouseSens: 500
+  mouseSens: 400
   jumpForce: 9
   mapMask:
     serializedVersion: 2

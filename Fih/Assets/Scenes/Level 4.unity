@@ -1659,7 +1659,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.5
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 42fcdcf82a69997478dbc1b5ea675d31, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: f5ae0cba57b9d294e9bad90bac1c6c61, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &647455145
 Transform:
@@ -2386,7 +2386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1036a00ad3715264c8ebff2152984451, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: Level 4
+  nextSceneName: Level 5
 --- !u!65 &952055243
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3795,7 +3795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  mouseSens: 500
+  mouseSens: 400
   jumpForce: 9
   mapMask:
     serializedVersion: 2
