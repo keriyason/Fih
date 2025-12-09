@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI enemiesLeftText;
     List<Enemy> enemies = new List<Enemy>();
 
+    [SerializeField] private GameObject wallRemove;
+    [SerializeField] private GameObject wallParticles;
+
     private void OnEnable()
     {
         Enemy.OnEnemyKilled += HandleEnemyDefeated;
@@ -28,10 +31,33 @@ public class GameManager : MonoBehaviour
         if (enemies.Remove(enemy)) // Removes Enemy from list on kill
         {
             UpdateEnemiesLeftText();
+            if (enemies.Count ==0)
+            {
+                UnlockNextLevel();
+            }
         }
     }
     void UpdateEnemiesLeftText()
     {
         enemiesLeftText.text = $"Enemies Left: {enemies.Count}"; // Updates Text with Enemies Remaining
     }
+    private void UnlockNextLevel()
+    {
+        Vector3 wallPos = wallRemove.transform.position;
+
+        // Destroy or disable the wall
+        Destroy(wallRemove);
+
+        // Spawn particles at wall position
+        if (wallParticles != null)
+        {
+            GameObject particles = Instantiate(wallParticles, wallPos, Quaternion.identity);
+            Destroy(particles, 3f); // auto-clean after 3 seconds
+        }
+
+        Debug.Log("Enemies have been defeated. Unlocked");
+    }
+
 }
+
+

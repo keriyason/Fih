@@ -52,7 +52,9 @@ public class Weapon : MonoBehaviour
 
         {
             Quaternion rotationFix = transform.rotation * Quaternion.Euler(90f, 0f, 0f);
-            Instantiate(slashVFX, transform.position, rotationFix);
+            GameObject vfxInstance = Instantiate(slashVFX, transform.position, rotationFix); //spawns vfx on swing
+            Destroy(vfxInstance, 2f);
+
 
         }
 
