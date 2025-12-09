@@ -1035,7 +1035,7 @@ Transform:
   m_GameObject: {fileID: 234848748}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 35.41, y: 8.275643, z: -1.67}
+  m_LocalPosition: {x: 26.8, y: 8.275643, z: -1.67}
   m_LocalScale: {x: 1.78051, y: 4.84412, z: 29.2645}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4823,7 +4823,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesLeftText: {fileID: 1919375563}
-  wallRemove: {fileID: 0}
+  wallRemove: {fileID: 2134916173}
   wallParticles: {fileID: 0}
 --- !u!4 &1441269752
 Transform:
@@ -7401,7 +7401,7 @@ Transform:
   m_GameObject: {fileID: 2134916173}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 72.08, y: 8.275643, z: -1.67}
+  m_LocalPosition: {x: 27.45, y: 8.275643, z: -1.67}
   m_LocalScale: {x: 0.50837, y: 4.84412, z: 29.2645}
   m_ConstrainProportionsScale: 0
   m_Children: []

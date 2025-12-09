@@ -530,7 +530,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.5
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 42fcdcf82a69997478dbc1b5ea675d31, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 7885216ff0fe5484a9f652e5a11cdec7, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &86596792
 Transform:
@@ -5001,7 +5001,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesLeftText: {fileID: 1339594697}
-  wallRemove: {fileID: 0}
+  wallRemove: {fileID: 985115349}
   wallParticles: {fileID: 0}
 --- !u!4 &1935117462
 Transform:
